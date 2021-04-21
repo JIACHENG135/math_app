@@ -1,0 +1,1 @@
+{"1": {"category": "cate_name", "question": "question_num", "timestamp": "2021-04-20 21:26:34.141002", "description": "Emily has 3 apples, she eats one, how many apples left? Drag the lines to fill the logic in!", "steps": ["there are two apples left", "Since she eats one, we need to minus 1.", "Since Emily has 3 apples, we start with 3", "Because 3 - 1 = 2"]}}
