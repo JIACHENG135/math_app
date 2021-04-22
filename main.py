@@ -6,8 +6,7 @@ from pydantic import BaseModel
 from datetime import datetime
 import json
 app = FastAPI()
-class Data(BaseModel):
-    user: str
+
 
 class Question(BaseModel):
     category: str
@@ -23,8 +22,7 @@ async def root(cate_name: str, q_num: str):
     json_compatible_item_data = jsonable_encoder(data[q_num])
     return JSONResponse(content=json_compatible_item_data)
 
-# @app.post("/q/{q_num}",response_model=Question)
-@app.post("/q/{q_num}")
+@app.post("/q/{q_num}",response_model=Question)
 def gene_question(q_num:str, question:Question):
     with open("data.json",'r') as f:
         data = json.load(f)
@@ -32,4 +30,4 @@ def gene_question(q_num:str, question:Question):
     print(data)
     with open("data.json",'w') as f:
         json.dump(data, f)
-    return "OK"
+    return question
